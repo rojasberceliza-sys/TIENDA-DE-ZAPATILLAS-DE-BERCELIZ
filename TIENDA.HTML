@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B MODA - Tienda Virtual</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #222;
+}
+
+header {
+  background: #172554;
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  background: white;
+  color: #1d4ed8;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 15px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+nav {
+  background: #1e40af;
+  padding: 13px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.inicio {
+  background: linear-gradient(120deg,#1e3a8a,#3b82f6);
+  color: white;
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.inicio h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.inicio p {
+  margin-bottom: 20px;
+}
+
+.boton {
+  background: #facc15;
+  color: #172554;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 15px;
+}
+
+h2.titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #172554;
+}
+
+.categorias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.categorias button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #dbeafe;
+  color: #1e40af;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.categorias button:hover {
+  background: #1e40af;
+  color: white;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(210px,1fr));
+  gap: 20px;
+}
+
+.producto {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px #00000015;
+  padding-bottom: 15px;
+}
+
+.producto img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.producto h3 {
+  padding: 10px;
+  color: #172554;
+}
+
+.producto p {
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.precio {
+  display: block;
+  padding: 10px;
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.producto button {
+  margin: 0 10px;
+  width: calc(100% - 20px);
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 11px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.carrito {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 3px 12px #00000015;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.eliminar {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.total {
+  text-align: right;
+  font-size: 23px;
+  color: #1d4ed8;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+footer {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 35px;
+}
+
+@media(max-width:600px) {
+  header {
+    justify-content: center;
+  }
+
+  nav a {
+    display: inline-block;
+    font-size: 13px;
+  }
+
+  .inicio h2 {
+    font-size: 25px;
+  }
+
+  .productos {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 10px;
+  }
+
+  .producto img {
+    height: 150px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">B</div>
+    <div>
+      <h1>B MODA</h1>
+      <small>Tu estilo, tu elegancia</small>
+    </div>
+  </div>
+  <div>🛍️ Mi tienda</div>
+</header>
+
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#catalogo">Productos</a>
+  <a href="#carrito">Carrito 🛒</a>
+</nav>
+
+<section class="inicio" id="inicio">
+  <h2>¡Bienvenidos a B MODA!</h2>
+  <p>
+    Encuentra las mejores prendas de vestir
+    para damas, caballeros y niños.
+  </p>
+  <a href="#catalogo">
+    <button class="boton">Ver productos</button>
+  </a>
+</section>
+
+<section class="contenedor" id="catalogo">
+
+<h2 class="titulo">Nuestro catálogo</h2>
+
+<div class="categorias">
+  <button onclick="filtrar('Todos')">Todos</button>
+  <button onclick="filtrar('Damas')">Damas</button>
+  <button onclick="filtrar('Caballeros')">Caballeros</button>
+  <button onclick="filtrar('Niños')">Niños</button>
+</div>
+
+<div class="productos" id="listaProductos"></div>
+
+<div class="carrito" id="carrito">
+  <h2>🛒 Carrito de compras</h2>
+  <div id="listaCarrito">
+    Tu carrito está vacío.
+  </div>
+
+  <div class="total">
+    Total: S/ <span id="total">0.00</span>
+  </div>
+</div>
+
+</section>
+
+<footer>
+  <h2>B MODA</h2>
+  <p>Gracias por visitar nuestra tienda virtual.</p>
+  <p>© 2026 - Todos los derechos reservados</p>
+</footer>
+
+<script>
+
+const productos = [
+{
+ id:1,
+ nombre:"Vestido elegante",
+ categoria:"Damas",
+ descripcion:"Vestido moderno para toda ocasión.",
+ precio:75,
+ imagen:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500"
+},
+{
+ id:2,
+ nombre:"Blusa de dama",
+ categoria:"Damas",
+ descripcion:"Blusa casual y elegante.",
+ precio:45,
+ imagen:"https://images.unsplash.com/photo-1564257577-0a6e1d7e7c20?w=500"
+},
+{
+ id:3,
+ nombre:"Pantalón de hombre",
+ categoria:"Caballeros",
+ descripcion:"Pantalón moderno y cómodo.",
+ precio:65,
+ imagen:"https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500"
+},
+{
+ id:4,
+ nombre:"Camisa moderna",
+ categoria:"Caballeros",
+ descripcion:"Camisa para toda ocasión.",
+ precio:55,
+ imagen:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500"
+},
+{
+ id:5,
+ nombre:"Vestido infantil",
+ categoria:"Niños",
+ descripcion:"Vestido bonito para niñas.",
+ precio:40,
+ imagen:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=500"
+},
+{
+ id:6,
+ nombre:"Ropa infantil",
+ categoria:"Niños",
+ descripcion:"Conjunto cómodo para niños.",
+ precio:38,
+ imagen:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=500"
+}
+];
+
+let carrito = [];
+
+function mostrarProductos(categoria="Todos") {
+
+ const lista = document.getElementById("listaProductos");
+ lista.innerHTML = "";
+
+ const filtrados = categoria === "Todos"
+ ? productos
+ : productos.filter(p => p.categoria === categoria);
+
+ filtrados.forEach(p => {
+  lista.innerHTML += `
+   <div class="producto">
+    <img src="${p.imagen}" alt="${p.nombre}">
+    <h3>${p.nombre}</h3>
+    <p>${p.descripcion}</p>
+    <p>${p.categoria}</p>
+    <span class="precio">S/ ${p.precio.toFixed(2)}</span>
+    <button onclick="agregar(${p.id})">
+      Agregar al carrito
+    </button>
+   </div>
+  `;
+ });
+}
+
+function filtrar(categoria) {
+ mostrarProductos(categoria);
+}
+
+function agregar(id) {
+ const producto = productos.find(p => p.id === id);
+ const existente = carrito.find(p => p.id === id);
+
+ if(existente) {
+   existente.cantidad++;
+ } else {
+   carrito.push({...producto,cantidad:1});
+ }
+
+ mostrarCarrito();
+}
+
+function eliminar(id) {
+ const producto = carrito.find(p => p.id === id);
+
+ if(producto.cantidad > 1) {
+   producto.cantidad--;
+ } else {
+   carrito = carrito.filter(p => p.id !== id);
+ }
+
+ mostrarCarrito();
+}
+
+function mostrarCarrito() {
+
+ const lista = document.getElementById("listaCarrito");
+ const totalTexto = document.getElementById("total");
+
+ lista.innerHTML = "";
+ let total = 0;
+
+ if(carrito.length === 0) {
+   lista.innerHTML = "Tu carrito está vacío.";
+ }
+
+ carrito.forEach(p => {
+
+  let subtotal = p.precio * p.cantidad;
+  total += subtotal;
+
+  lista.innerHTML += `
+   <div class="item-carrito">
+    <div>
+     <strong>${p.nombre}</strong><br>
+     Cantidad: ${p.cantidad}<br>
+     S/ ${subtotal.toFixed(2)}
+    </div>
+    <button class="eliminar"
+      onclick="eliminar(${p.id})">
+      Eliminar
+    </button>
+   </div>
+  `;
+ });
+
+ totalTexto.textContent = total.toFixed(2);
+}
+
+mostrarProductos();
+mostrarCarrito();
+
+</script>
+
+</body>
+</html>
